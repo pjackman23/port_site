@@ -1,0 +1,37 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+
+
+$green-color: #43b32d;
+$blue-color: #3a82a6;
+$purple-color: #8c4c99;
+$orange-color: #e67339;
+
+$font-stack: Segoe UI, sans-serif;
+
+$visual-grid: true;
+$visual-grid-color: red;
+$visual-grid-index: front;
+$visual-grid-opacity: 0.1;
+
+body {
+	font: 100% $font-stack;
+}
+
+.header-wrapper{
+	@include outer-container;
+	.header-logo{ 
+		@include span-columns(1);
+	}
+	.header-li{
+		@include span-columns(2);
+		a{
+			text-decoration: none;
+		}
+	}
+}
+
+.footer-wrapper{
+	font: 80% $font-stack;
+	color: #222222;
+}
