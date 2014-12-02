@@ -58,12 +58,16 @@ var Home = {
 	    	h1Size = 85;
 	    	marginCorrection = -4;
 	    }
-	    else if(h1Size > 225){
-	    	h1Size = 225;
-	    	marginCorrection = -11;
+	    else if(h1Size > 200){
+	    	h1Size = 200;
+	    	marginCorrection = -10;
 	    }
+
 	    if(h3Size < 25){
 	    	h3Size = 25;
+	    }
+	    else if(h3Size > 40){
+	    	h3Size = 40;
 	    }
 
 	    var imgSize = parseInt(h3Size * 1.25);

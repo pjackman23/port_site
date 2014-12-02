@@ -159,7 +159,7 @@ nav {
 	}
 
 	#btm-div {
-		margin-top: 7em;
+		@include margin(7em null 2em null);
 
 		h3 {
 			@include margin(0px 1em 0px 0px);
