@@ -25,11 +25,6 @@ $font-stack: Segoe UI, sans-serif;
     background: rgba($color, $opacity);
 }
 
-@mixin font-spec($size, $stack) {
-	font: $size $stack;
-	font-weight: lighter;
-}
-
 //core scss
 html { 
   background: url(../img/proto_bg.png) no-repeat center center fixed; 
@@ -40,17 +35,19 @@ html {
 }
 
 body {
-	@include font-spec(1em, $font-stack);
 	color: $white-color;
+	font: lighter 1em $font-stack;
+	min-width: 700px;
 }
 
 nav {
 	@include background-opacity($nav-color, $nav-opacity);
-	@include position(fixed, 0px 0px null null);
+	@include position(fixed, 0px null null 0px);
 	@include size(100% (75px + $nav-border-thickness));
 
 	border-bottom: $nav-border-thickness solid $blue-color;
 	min-width: 40em;
+	z-index: 1000;
 
 	ul {
 		@include margin(0 5em 0 5em);
@@ -68,23 +65,28 @@ nav {
 
 			.nav-a {
 				@include size(100% 75px);
-				@include transition(all 1s);
+				@include transition-property(background);
+				@include transition-duration(1s);
 
 				color: $white-color;
 				display: inline-block;
 				outline: none;
 				text-decoration: none;
 				text-align: center;
+				font-size: 1.2em;
 
 				#nav-img { 
 					@include size(65px 75px);
-					@include padding(5px 0px 5px 0px);				
+					@include padding(5px 0px 5px 0px);			
 				}
 			}
 
 			.nav-a:hover {
-				@include transition(all 0.25s);
+				@include transition-property(background);
+				@include transition-duration(0.25s);
+
 				background: $nav-light-hover-color;
+				font-size: 1.225em;
 			}
 			.nav-a:active {
 				background: $orange-color;
@@ -106,42 +108,88 @@ nav {
 	}
 }
 
+.appear {
+	@include transition-property(opacity);
+	@include transition-duration(3.0s);
+	@include transition-timing-function(ease-in);
+	@include transition-delay(0s);
+	
+	opacity: 0;
+}
+
+.delay-one {
+	@include transition-delay(1.5s);
+}
+
+.delay-two {
+	@include transition-delay(3s);
+}
+
 .content-wrapper {
 	@include padding(100px 5em null 5em);
 	@include size(100% 100%);
 
-	h1 {
-		@include font-spec(5em, $font-stack);
+	min-width: 700px;
 
+	h1 {
+		font: lighter 5em $font-stack;
 		margin:0px;
+	}
+
+	h3 {
+		@include margin(0.4em 0px 0.4em 0px);
+
+		font: lighter 1.5em $font-stack;
+	}
+
+	.color-span {
+		color: $orange-color;
+	}
+
+	.content-inner{
+		@include padding(0px 5em 0px 5em);
 	}
 }
 
 #home-wrapper {
-	//background-image: url("../img/home.png");
-	background-repeat: no-repeat;
-	background-size: 100% auto;
+	@include background-opacity($nav-img-color, 0.25);
+
+	.h1-resize {
+		line-height: 100%;
+	}
+
+	#btm-div {
+		margin-top: 7em;
+
+		h3 {
+			@include margin(0px 1em 0px 0px);
+			display: inline-block;
+		}
+
+		#home-img {
+			@include size(40px 40px);
+
+			display: inline-block;
+		}
+	}
 }
 
 #about-wrapper {
-	//background-image: url("../img/home.png");
-	background-size: 100% auto;
 }
 
 #work-wrapper {
-	//background-image: url("../img/home.png");
-	background-size: 100% auto;
+	@include background-opacity($nav-img-color, 0.2);
 }
 
-#footer-wrapper {
-	//background-image: url("../img/home.png");
-	background-size: 100% auto;
+#contact-wrapper {
+	@include padding(null 0px 0px 0px);
+	position: relative;
 }
 
 footer {
 	@include background-opacity($nav-color, $nav-opacity);
-	@include margin(null -5em null null);
 	@include padding(0 5em 0 0);
+	@include position(absolute, null null 0px null);
 	@include size(100% 2em);
 
 	p{
