@@ -1,4 +1,21 @@
-//nav img functions
+var Body = {
+	resizeDivs: function() {
+		$(".content-wrapper").css('width', $(window).width());
+		$(".content-wrapper").css('min-height', screen.height);
+	},
+
+	appear: function() {
+			$('.scroll-appear').each(function(){
+			var imagePos = $(this).offset().top;
+
+			var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow + $(window).height()) {
+				$(this).css('opacity', 1)
+			}
+		});
+	}
+}
+
 var NavBar = {
 
 	anchorScroll: function() {
@@ -32,13 +49,6 @@ var NavBar = {
 		document.getElementById('nav-img-a').onmouseup=function () {
 		    document.getElementById('nav-img').src = "../img/logo-invert.png";
 		};
-	}
-}
-
-var Body = {
-	resizeDivs: function() {
-		$(".content-wrapper").css('width', $(window).width());
-		$(".content-wrapper").css('min-height', $(window).height());
 	}
 }
 
@@ -82,6 +92,7 @@ var Home = {
 	}
 }
 
+//DOM ready function calls
 $(document).ready(function() {
     NavBar.anchorScroll();
 	NavBar.bindImgEvents();
@@ -91,12 +102,19 @@ $(document).ready(function() {
 	Home.resizeElements();
  });
 
+//window load function calls
 $(window).load(function() {
 	Home.appear();
 });
 
+//window resize function calls
 $(window).resize(function() {
   	Body.resizeDivs();
 
 	Home.resizeElements();
+});
+
+//window scroll functions
+$(window).scroll(function() {
+	Body.appear();
 });

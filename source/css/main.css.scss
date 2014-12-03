@@ -14,7 +14,7 @@ $nav-dark-hover-color: #2d3940;
 $nav-img-color: #12171a;
 $nav-light-hover-color: #285a73;
 
-$nav-opacity: 0.8;
+$nav-opacity: 0.9;
 $nav-border-thickness: 2px;
 
 $font-stack: Segoe UI, sans-serif;
@@ -50,7 +50,7 @@ nav {
 	z-index: 1000;
 
 	ul {
-		@include margin(0 5em 0 5em);
+		@include margin(0px 5em 0px 5em);
 
 		padding: 0px;
 	
@@ -108,9 +108,9 @@ nav {
 	}
 }
 
-.appear {
+.appear, .scroll-appear {
 	@include transition-property(opacity);
-	@include transition-duration(3.0s);
+	@include transition-duration(1.5s);
 	@include transition-timing-function(ease-in);
 	@include transition-delay(0s);
 	
@@ -118,15 +118,31 @@ nav {
 }
 
 .delay-one {
-	@include transition-delay(1.5s);
+	@include transition-delay(0.5s);
 }
 
 .delay-two {
+	@include transition-delay(1s);
+}
+
+.delay-three {
+	@include transition-delay(1.5s);
+}
+
+.delay-four {
+	@include transition-delay(2s);
+}
+
+.delay-five {
+	@include transition-delay(2.5s);
+}
+
+.delay-six {
 	@include transition-delay(3s);
 }
 
 .content-wrapper {
-	@include padding(100px 5em null 5em);
+	@include padding(100px 5em 2em 5em);
 	@include size(100% 100%);
 
 	min-width: 700px;
@@ -159,7 +175,7 @@ nav {
 	}
 
 	#btm-div {
-		@include margin(7em null 2em null);
+		@include margin(7em null null null);
 
 		h3 {
 			@include margin(0px 1em 0px 0px);
@@ -175,10 +191,66 @@ nav {
 }
 
 #about-wrapper {
+	position: relative;
+
+	p {
+		font: lighter 1.5em $font-stack;
+	}
+
+	#about-p {
+		width: 90%;
+	}
+
+	h2 {
+		@include margin(0.5px null 0px null);
+		
+		font: lighter 3.25em $font-stack;
+	}
+
+	.qual-wrapper{
+		@include margin(1em 1em 0px null);
+
+		display: inline-block;
+		min-width: 350px;
+		vertical-align: top;
+		width: 25%;
+
+		h3 {
+			color: $orange-color;
+			font: lighter 2em $font-stack;
+			margin: 0px;
+		}
+
+		p {
+			@include background-opacity($orange-color, 0.05);
+			@include border-color($orange-color $orange-color null null);
+			@include border-style(solid solid null null);
+			@include border-width(2px 2px null null);
+			@include margin(1em null 0px null);
+			@include padding(0.7em null 1em 1em);
+
+			height: 10em;
+			line-height: 1.6em;
+		}
+	}
+	.img-wrapper{
+		@include size(40px 10em);
+
+		display: inline-block;
+		position: relative;
+		vertical-align: bottom;
+
+		#about-img{
+			@include position(absolute, null null 0px 0px);
+			@include size(40px 40px);
+			
+			vertical-align: bottom;
+		}
+	}
 }
 
 #work-wrapper {
-	@include background-opacity($nav-img-color, 0.2);
+	@include background-opacity($nav-img-color, 0.25);
 }
 
 #contact-wrapper {
