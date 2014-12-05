@@ -14,7 +14,7 @@ $nav-dark-hover-color: #2d3940;
 $nav-img-color: #12171a;
 $nav-light-hover-color: #285a73;
 
-$nav-opacity: 0.9;
+$nav-opacity: 0.95;
 $nav-border-thickness: 2px;
 
 $font-stack: Segoe UI, sans-serif;
@@ -27,7 +27,7 @@ $font-stack: Segoe UI, sans-serif;
 
 //core scss
 html { 
-  background: url(../img/proto_bg.png) no-repeat center center fixed; 
+  background: url(../img/proto-bg.png) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -37,7 +37,7 @@ html {
 body {
 	color: $white-color;
 	font: lighter 1em $font-stack;
-	min-width: 700px;
+	min-width: 800px;
 }
 
 nav {
@@ -86,10 +86,11 @@ nav {
 				@include transition-duration(0.25s);
 
 				background: $nav-light-hover-color;
-				font-size: 1.225em;
+				font-size: 1.25em;
 			}
 			.nav-a:active {
 				background: $orange-color;
+				font-size: 1.15em;
 			}
 
 			#nav-img-a:hover {
@@ -97,6 +98,9 @@ nav {
 			}
 			#nav-img-a:active {
 				background: #3e5059;
+				img{
+					@include padding(6px 1px 6px 1px);	
+				}
 			}
 		}
 		li:first-child {
@@ -108,48 +112,16 @@ nav {
 	}
 }
 
-.appear, .scroll-appear {
-	@include transition-property(opacity);
-	@include transition-duration(1.5s);
-	@include transition-timing-function(ease-in);
-	@include transition-delay(0s);
-	
-	opacity: 0;
-}
-
-.delay-one {
-	@include transition-delay(0.5s);
-}
-
-.delay-two {
-	@include transition-delay(1s);
-}
-
-.delay-three {
-	@include transition-delay(1.5s);
-}
-
-.delay-four {
-	@include transition-delay(2s);
-}
-
-.delay-five {
-	@include transition-delay(2.5s);
-}
-
-.delay-six {
-	@include transition-delay(3s);
-}
-
 .content-wrapper {
 	@include padding(100px 5em 2em 5em);
 	@include size(100% 100%);
 
-	min-width: 700px;
+	min-width: 800px;
 
 	h1 {
+		@include margin(0px 0px 0.25em 0px);
 		font: lighter 5em $font-stack;
-		margin:0px;
+		
 	}
 
 	h3 {
@@ -165,13 +137,63 @@ nav {
 	.content-inner{
 		@include padding(0px 5em 0px 5em);
 	}
+
+	.orange-h3 {
+		color: $orange-color;
+		font: lighter 2em $font-stack;
+		margin: 0px;
+	}
+
+	.orange-wrapper {
+		@include background-opacity($orange-color, 0.05);
+		@include border-color($orange-color $orange-color null null);
+		@include border-style(solid solid null null);
+		@include border-width(2px 2px null null);
+		@include margin(0.5em null 0px null);
+		@include padding(1em 1em 1em 1.5em);
+	}
+
+	//animation styles
+	.appear, .scroll-appear {
+		@include transition-property(opacity);
+		@include transition-duration(1.5s);
+		@include transition-timing-function(ease-in);
+		@include transition-delay(0s);
+		
+		opacity: 0;
+	}
+
+	.delay-one {
+		@include transition-delay(0.5s);
+	}
+
+	.delay-two {
+		@include transition-delay(1s);
+	}
+
+	.delay-three {
+		@include transition-delay(1.5s);
+	}
+
+	.delay-four {
+		@include transition-delay(2s);
+	}
+
+	.delay-five {
+		@include transition-delay(2.5s);
+	}
+
+	.delay-six {
+		@include transition-delay(3s);
+	}
 }
 
 #home-wrapper {
-	@include background-opacity($nav-img-color, 0.25);
+	@include background-opacity($nav-img-color, 0.2);
 
 	.h1-resize {
 		line-height: 100%;
+		margin: 0px;
 	}
 
 	#btm-div {
@@ -186,6 +208,7 @@ nav {
 			@include size(40px 40px);
 
 			display: inline-block;
+			vertical-align: top;
 		}
 	}
 }
@@ -194,6 +217,7 @@ nav {
 	position: relative;
 
 	p {
+		@include margin(0 null 0.5em null);
 		font: lighter 1.5em $font-stack;
 	}
 
@@ -203,7 +227,7 @@ nav {
 
 	h2 {
 		@include margin(0.5px null 0px null);
-		
+
 		font: lighter 3.25em $font-stack;
 	}
 
@@ -211,28 +235,17 @@ nav {
 		@include margin(1em 1em 0px null);
 
 		display: inline-block;
-		min-width: 350px;
+		min-width: 365px;
 		vertical-align: top;
-		width: 25%;
-
-		h3 {
-			color: $orange-color;
-			font: lighter 2em $font-stack;
-			margin: 0px;
-		}
+		width: 27.5%;
 
 		p {
-			@include background-opacity($orange-color, 0.05);
-			@include border-color($orange-color $orange-color null null);
-			@include border-style(solid solid null null);
-			@include border-width(2px 2px null null);
-			@include margin(1em null 0px null);
-			@include padding(0.7em null 1em 1em);
-
 			height: 10em;
 			line-height: 1.6em;
+			margin: 0px;
 		}
 	}
+
 	.img-wrapper{
 		@include size(40px 10em);
 
@@ -250,25 +263,116 @@ nav {
 }
 
 #work-wrapper {
-	@include background-opacity($nav-img-color, 0.25);
+	@include background-opacity($nav-img-color, 0.2);
+
+	.exp-wrapper {
+		width: 100%;
+		margin-bottom: 2em;
+	
+		p {
+			@include margin(0px 1.5em 0px 0px);
+			@include padding(0px 0px 1em 0px);
+
+			display: inline-block;
+			font: lighter 1.5em $font-stack;
+			min-width: 500px;
+			vertical-align: top;
+			width: 50%;
+
+			span {
+				color: $blue-color;
+			}
+		}
+
+		a {
+			@include size(47.5% null);
+
+			display: inline-block;
+			min-width: 475px;
+			outline: none;
+		}
+
+		a:active {
+			img {
+				@include padding(0px 1px 0px 1px);
+				@include margin(1px 0px 1px 0px);
+			}
+		}
+
+		a:hover {
+			img {
+				opacity: 1;
+			}
+		}
+
+		img {
+			@include size(100% auto);
+			//max-width: 759px;
+			opacity: 0.85;
+		}
+	}
+
+	#last-exp-wrapper{
+		margin-bottom: 0px;
+	}
+
 }
 
 #contact-wrapper {
 	@include padding(null 0px 0px 0px);
 	position: relative;
+
+	.content-inner {
+		p {
+			@include margin(0px 0px 2em 0px);
+			font: lighter 1.5em $font-stack;
+		}
+
+		.contact-item {
+
+			@include margin(1em 0px 1em 0px);
+			p {
+				display: inline-block;
+				margin: 0px;
+			}
+			img {
+				@include size(1em 1em);
+
+				display: inline-block;
+				margin-right: 1em;
+			}
+		}
+
+		#closing {
+			@include margin(5em 0px 0px 0px);
+
+			p {
+				display: inline-block;
+				margin-right: 1em;
+			}
+
+			img {
+				@include size(2em 2em);
+
+				display: inline-block;
+			}
+		}
+	}
 }
 
 footer {
 	@include background-opacity($nav-color, $nav-opacity);
-	@include padding(0 5em 0 0);
-	@include position(absolute, null null 0px null);
-	@include size(100% 2em);
+	@include margin(7em 0 0 0);
+	@include position(absolute, null 0px null null);
+	@include size(50% 2em);
 
-	p{
+	p {
+		@include margin(0px 0px 0px 2em);
+
 		color: $nav-dark-hover-color;
-		float: right;
+		//float: right;
 		font-weight: normal;
 		line-height: 2em;
-		margin: 0px;
+		min-width: 400px;
 	}
 }

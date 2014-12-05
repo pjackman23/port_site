@@ -13,10 +13,33 @@ var Body = {
 				$(this).css('opacity', 1)
 			}
 		});
+	},
+
+	setMinWidth: function() {
+		$("body").css('min-width', parseInt(screen.width * 0.5) + "px");
+		$(".content-wrapper").css('min-width', parseInt(screen.width * 0.5) + "px");
+
+		$(".exp-p").css('min-width', parseInt(screen.width * 0.35) + "px");
+		$(".exp-a").css('min-width', parseInt(screen.width * 0.35) + "px");
 	}
 }
 
 var NavBar = {
+	scrollRatio: 0,
+	docHeight: 0,
+
+	
+	getDocHeight: function() {
+		var body = document.body;
+	    var html = document.documentElement;
+
+		docHeight = Math.max( body.scrollHeight, body.offsetHeight, 
+	            		html.clientHeight, html.scrollHeight, html.offsetHeight );
+	},
+
+	getScrollRatio: function() {
+		scrollRatio = $(document).scrollTop() / (1.0 * docHeight);
+	},
 
 	anchorScroll: function() {
 		$('a[href*=#]:not([href=#])').click(function() {
@@ -24,13 +47,21 @@ var NavBar = {
 		    	var target = $(this.hash);
 		    	target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
 		    	if (target.length) {
-		    		$('html,body').animate({
-		        		scrollTop: target.offset().top
-		        	}, 1000);
+		    		$('html,body').animate({scrollTop: target.offset().top}, 1250);
 		        	return false;
 		      	}
 		    }
 		});
+	},
+
+	scrollAdjust: function() {
+		var oldDocHeight = docHeight;
+
+		this.getDocHeight();
+
+		if(docHeight != oldDocHeight) {
+			window.scrollTo(0, scrollRatio * docHeight);
+		}
 	},
 
 	bindImgEvents: function() {
@@ -96,8 +127,11 @@ var Home = {
 $(document).ready(function() {
     NavBar.anchorScroll();
 	NavBar.bindImgEvents();
+	NavBar.getDocHeight();
+	NavBar.getScrollRatio();
 
 	Body.resizeDivs();
+	Body.setMinWidth();
 
 	Home.resizeElements();
  });
@@ -110,11 +144,15 @@ $(window).load(function() {
 //window resize function calls
 $(window).resize(function() {
   	Body.resizeDivs();
+  	Body.setMinWidth();
 
 	Home.resizeElements();
+	NavBar.scrollAdjust();
 });
 
 //window scroll functions
 $(window).scroll(function() {
 	Body.appear();
+
+	NavBar.getScrollRatio();
 });

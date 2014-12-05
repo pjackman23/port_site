@@ -17,7 +17,7 @@
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
-    <body>
+    <body id="body">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -74,40 +74,49 @@
                 <br><br>
                 So, what are my strengths then?
             </p>
-            <h2 class="scroll-appear delay-two">
+            <h2 class="scroll-appear delay-one">
                 Meaningful design<span class="color-span">.</span> Clean code<span class="color-span">.</span>
             </h2>
-            <div class="qual-wrapper scroll-appear delay-three">
-                <h3 class="color-span">
+            <div class="qual-wrapper scroll-appear delay-one">
+                <h3 class="orange-h3">
                     Development
                 </h3>
-                <p>
-                    C, C#, C++, Python<br>
-                    HTML5/CSS3, SASS, XAML<br>
-                    JavaScript, jQuery<br>
-                </p>
+                <div class="orange-wrapper">
+                    <p>
+                        C, C#, C++, Python<br>
+                        HTML5/CSS3, SASS, XAML<br>
+                        JavaScript, jQuery
+                    </p>
+                </div>
             </div>
-            <div class="qual-wrapper scroll-appear delay-four">
-                <h3 class="color-span">
+            <div class="qual-wrapper scroll-appear delay-one">
+                <h3 class="orange-h3">
                     Design
                 </h3>
-                <p>
-                    Adobe Photoshop<br>
-                    Autodesk Maya<br>
-                    Adobe After Effects<br>
-                    Adobe Premiere Pro<br>
-                </p>
+                <div class="orange-wrapper">
+                    <p>
+                        Adobe Photoshop<br>
+                        Adobe After Effects, Premiere<br>
+                        Autodesk Maya<br>
+                        Digital/Traditional Art<br>
+                        d.school Process
+                    </p>
+                </div>
             </div>
-            <div class="qual-wrapper scroll-appear delay-five">
-                <h3 class="color-span">
+            <div class="qual-wrapper scroll-appear delay-one">
+                <h3 class="orange-h3">
                     UX
                 </h3>
-                <p>
-                    User Interviews<br>
-                    Rapid Prototyping<br>
-                </p>
+                <div class="orange-wrapper">
+                    <p>
+                        Persona Creation<br>
+                        User Interviews<br>
+                        Rapid Prototyping<br>
+                        UI Research
+                    </p>
+                </div>
             </div>
-            <div class="img-wrapper scroll-appear delay-six">
+            <div class="img-wrapper scroll-appear delay-one">
                 <img id="about-img" src="img/oh.png"/>
             </div>
         </div>
@@ -115,14 +124,129 @@
         <a id="work" class="empty-a"></a>
         <div class="content-wrapper" id="work-wrapper">
             <h1>WORK</h1>
+            <h3 class= "orange-h3 scroll-appear delay-one">
+                Hudl
+            </h3>
+            <div class="exp-wrapper orange-wrapper scroll-appear delay-one">
+                <p class="exp-p">
+                    <span>Role:</span> Lead Interface Designer<br>
+                    <span>Paradigm:</span> Windows 8
+                    <br><br>
+                    During the 2012-2013 academic year, I worked with six other
+                    students to make a Windows 8 application for Hudl, a video
+                    software company specializing in tools for athletes and coaches.
+                    I served as the lead interface designer on the project, conducting 
+                    coach interviews, creating mockups, collaborating with Hudl designers,
+                    maintaining a set of design principles for my team's work, and 
+                    writing some of the XAML and C# code needed for the interface.
+                    We completely redesigned (and partially recoded) the interface twice
+                    during development, but in the end, we were definitely proud of what we
+                    managed to put together. We even gained a four-star average rating in
+                    the app store.
+                </p>
+                <a class="exp-a" id="hudl-a" href="javaScript:void(0);">
+                    <img id="hudl-img" src="img/hudl-player.jpg"/>
+                </a>
+            </div>
+            <h3 class= "orange-h3 scroll-appear delay-one">
+                HDR
+            </h3>
+            <div class="exp-wrapper orange-wrapper scroll-appear delay-one">
+                <p class="exp-p">
+                    <span>Role:</span> Development Manager<br>
+                    <span>Paradigm:</span> Hospital Wayfinding
+                    <br><br>
+                    Over the course of the 2013-2014 academic year, I worked with another
+                    student team to design a hospital wayfinding system for HDR. We followed HDR's own
+                    Synapse design process, actively scoping the project (and our design principles),
+                    empathisizing through core user personas, brainstorming, prototyping, and testing
+                    with relevant users. We hit the whiteboards hard, and traveled to
+                    several hospitals to get a feel for how confusing navigation can be... 
+                    especially when you're not feeling your best. At the end of the project, we had an
+                    expansive idea catalogue and several working prototypes that leveraged graphic
+                    affordance and digital guidance (via Bluetooth, Android, and Arduino systems).
+                </p>
+                <a class="exp-a" id="hdr-a" href="javaScript:void(0);">
+                    <img id="hdr-img" src="img/hdr-mail.jpg"/>
+                </a>
+            </div>
+            <h3 class= "orange-h3 scroll-appear delay-one">
+                Garmin International
+            </h3>
+            <div class="exp-wrapper orange-wrapper scroll-appear delay-one">
+                <p class="exp-p">
+                    <span>Role:</span> Software Engineering Intern<br>
+                    <span>Paradigm:</span> GPS Trail Watch
+                    <br><br>
+                    During the summer of 2013, I was able to intern at Garmin International
+                    in Olathe, Kansas. I served in the outdoor division, working primary on GPS
+                    trail watches. In particular, I was tasked with coding temperature-compensated
+                    contrast settings for several LCD watch displays and creating a Virtual Partner
+                    pacing feature for the Fenix and Tactix watches. Design was primarily conducted
+                    via paper mockups, with the feature needing to adhere to existing Garmin standards.
+                    After the Virtual Partner was implemented in C, I was able to test it on
+                    my own Fenix as I biked around the Garmin campus. It was an awesome experience,
+                    and I was very happy that inital feature reviews were positive.
+                </p>
+                <a class="exp-a" id="garmin-a" href="javaScript:void(0);">
+                    <img id="garmin-img" src="img/garmin-fenix.jpg"/>
+                </a>
+            </div>
+            <h3 class= "orange-h3 scroll-appear delay-one">
+                Other
+            </h3>
+            <div class="exp-wrapper orange-wrapper scroll-appear delay-one" id="last-exp-wrapper">
+                <p class="exp-p">
+                    <span>Role:</span> UI Designer<br>
+                    <span>Paradigm:</span> Web/Mobile
+                    <br><br>
+                    At other times, I've put together a few design projects, namely this website
+                    and an airport mobile app prototype. I try to put myself into everything I work on,
+                    developing an aesthetic that's both appealing and highly functional. One hugely
+                    important aspect in acheiving those end results is user testing. Even in my
+                    personal projects, I make it a priority to get user feedback - to understand what
+                    people think and feel as they walk through my interfaces. It really is about the
+                    experience, and that's something I strive to make as enjoyable as possible.
+                </p>
+                <a class="exp-a" id="site-a" href="javaScript:void(0);">
+                    <img id="site-img" src="img/site-home.jpg"/>
+                </a>
+            </div>
         </div>
 
         <a id="contact" class="empty-a"></a>
         <div class="content-wrapper" id="contact-wrapper">
             <div class="content-inner" >
                 <h1>CONTACT</h1>
+                <p class="scroll-appear delay-one">
+                    I’m currently available for hire and can meet in Omaha and Lincoln (Nebraska).
+                </p>
+                <div class="contact-item scroll-appear delay-one">
+                    <img class="contact-info" src="img/smile.png"/>
+                    <p class="contact-info">
+                        pjackman23@gmail.com
+                    </p>
+                </div>
+                <div class="contact-item scroll-appear delay-one">
+                    <img class="contact-info" src="img/smile.png"/>
+                    <p class="contact-info">
+                        402.690.0067
+                    </p>
+                </div>
+                <div class="contact-item scroll-appear delay-one">
+                    <img class="contact-info" src="img/smile.png"/>
+                    <p class="contact-info">
+                        www.linkedin.com/pub/patrick-jackman/a9/92/677/
+                    </p>
+                </div>
+                <div class="scroll-appear delay-one" id="closing">
+                    <p>
+                        Thanks for stopping by, and have a good one.
+                    </p>
+                    <img src="img/smile.png"/>
+                </div>
             </div>
-            <footer>
+            <footer class="scroll-appear delay-one">
                 <p>&copy; Copyright Patrick Jackman 2014</p>
             </footer>
         </div>
