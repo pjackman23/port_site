@@ -17,6 +17,8 @@ $nav-light-hover-color: #285a73;
 $nav-opacity: 0.95;
 $nav-border-thickness: 2px;
 
+$contact-blue-hover: #47a0cc;
+
 $font-stack: Segoe UI, sans-serif;
 
 //mixins
@@ -208,7 +210,6 @@ nav {
 			@include size(40px 40px);
 
 			display: inline-block;
-			vertical-align: top;
 		}
 	}
 }
@@ -269,22 +270,22 @@ nav {
 		width: 100%;
 		margin-bottom: 2em;
 	
-		p {
+		.exp-p {
 			@include margin(0px 1.5em 0px 0px);
 			@include padding(0px 0px 1em 0px);
 
 			display: inline-block;
 			font: lighter 1.5em $font-stack;
-			min-width: 500px;
+			min-width: 475px;
 			vertical-align: top;
-			width: 50%;
+			width: 47.5%;
 
 			span {
 				color: $blue-color;
 			}
 		}
 
-		a {
+		.exp-a {
 			@include size(47.5% null);
 
 			display: inline-block;
@@ -292,14 +293,13 @@ nav {
 			outline: none;
 		}
 
-		a:active {
+		.exp-a:active {
 			img {
-				@include padding(0px 1px 0px 1px);
-				@include margin(1px 0px 1px 0px);
+				padding: 1px;
 			}
 		}
 
-		a:hover {
+		.exp-a:hover {
 			img {
 				opacity: 1;
 			}
@@ -318,6 +318,40 @@ nav {
 
 }
 
+#overlay {
+	@include size(100% 100%);
+	@include background-opacity($nav-color, 0.9);
+	@include position(fixed, 0px null null 0px);
+	@include transition-property(opacity);
+	@include transition-duration(0.25s);
+
+	z-index: 2000;
+	opacity: 0; //for animation
+	visibility: hidden;
+
+	#inner-overlay {
+		@include background-opacity($nav-img-color, $nav-opacity);
+		@include margin(3em auto 3em auto);
+		@include size(85% 85%);
+
+		#close-a {
+			@include size(2em 2em);
+
+			float: right;
+
+			#close-img {
+				@include size(2em 2em);
+			}
+		}
+
+		#close-a:active {
+			#close-img {
+				padding: 1px;
+			}
+		}
+	}
+}
+
 #contact-wrapper {
 	@include padding(null 0px 0px 0px);
 	position: relative;
@@ -331,15 +365,33 @@ nav {
 		.contact-item {
 
 			@include margin(1em 0px 1em 0px);
-			p {
-				display: inline-block;
-				margin: 0px;
+
+			a {
+				color: $blue-color;
+				outline: none;
 			}
+
+			a:hover {
+				color: $contact-blue-hover;
+			}
+
+			a: active {
+				color: $orange-color;
+			}
+
+			p {
+					display: inline-block;
+					margin: 0px;
+					vertical-align: bottom;
+			}
+
 			img {
-				@include size(1em 1em);
+				@include margin(0.25em 1em 0px 0px);
+				@include padding(0px 0px 0.25em 0px);
+				@include size(1.25em 1.5em);
 
 				display: inline-block;
-				margin-right: 1em;
+				vertical-align: bottom;
 			}
 		}
 

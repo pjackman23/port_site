@@ -65,19 +65,19 @@ var NavBar = {
 	},
 
 	bindImgEvents: function() {
-		document.getElementById('nav-img-a').onmouseover=function () {
+		document.getElementById('nav-img-a').onmouseover = function () {
 		    document.getElementById('nav-img').src = "../img/logo-invert.png";
 		};
 
-		document.getElementById('nav-img-a').onmouseout=function () {
+		document.getElementById('nav-img-a').onmouseout = function () {
 		    document.getElementById('nav-img').src = "../img/logo-default.png";
 		};
 
-		document.getElementById('nav-img-a').onmousedown=function () {
+		document.getElementById('nav-img-a').onmousedown = function () {
 		    document.getElementById('nav-img').src = "../img/logo-glow.png";
 		};
 
-		document.getElementById('nav-img-a').onmouseup=function () {
+		document.getElementById('nav-img-a').onmouseup = function () {
 		    document.getElementById('nav-img').src = "../img/logo-invert.png";
 		};
 	}
@@ -123,6 +123,58 @@ var Home = {
 	}
 }
 
+var Work = {
+
+	displayOverlay: function(sectionName) {
+		$("#overlay").css('visibility', "visible");
+		$("#overlay").css('opacity', 1);
+
+		//alert("This is: " + sectionName);
+	},
+
+	hideOverlay: function() {
+		$("#overlay").css('opacity', 0);
+		setTimeout(function(){ $("#overlay").css('visibility', "hidden"); }, 500); //allow animation to breathe
+	},
+
+	bindImgEvents: function(){
+		// links to overlay
+		document.getElementById('hudl-a').onclick = function () {
+		    Work.displayOverlay("hudl");
+		};
+
+		document.getElementById('hdr-a').onclick = function () {
+		    Work.displayOverlay("hdr");
+		};
+
+		document.getElementById('garmin-a').onclick = function () {
+		    Work.displayOverlay("garmin");
+		};
+
+		document.getElementById('other-a').onclick = function () {
+		    Work.displayOverlay("other");
+		};
+
+		//links within overlay
+		document.getElementById('close-a').onmouseover = function () {
+		    document.getElementById('close-img').src = "../img/x-invert.png";
+		};
+
+		document.getElementById('close-a').onmouseout = function () {
+		    document.getElementById('close-img').src = "../img/x-default.png";
+		};
+
+		document.getElementById('close-a').onmousedown = function () {
+		    document.getElementById('close-img').src = "../img/x-glow.png";
+		};
+
+		document.getElementById('close-a').onclick = function () {
+		    Work.hideOverlay();
+		};
+
+	}
+}
+
 //DOM ready function calls
 $(document).ready(function() {
     NavBar.anchorScroll();
@@ -134,6 +186,8 @@ $(document).ready(function() {
 	Body.setMinWidth();
 
 	Home.resizeElements();
+
+	Work.bindImgEvents();
  });
 
 //window load function calls
