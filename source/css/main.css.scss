@@ -22,6 +22,7 @@ $overlay-bg-color: #0a0c0d;
 $contact-blue-hover: #47a0cc;
 
 $font-stack: Segoe UI, sans-serif;
+$font-stack-p: Calibri, sans-serif;
 
 //mixins
 @mixin background-opacity($color, $opacity: 1) {
@@ -221,11 +222,11 @@ nav {
 
 	p {
 		@include margin(0 null 0.5em null);
-		font: lighter 1.25em $font-stack;
+		font: lighter 1.25em $font-stack-p;
 	}
 
 	#about-p {
-		width: 85%;
+		width: 82.5%;
 	}
 
 	h2 {
@@ -244,7 +245,7 @@ nav {
 
 		p {
 			min-height: 8em;
-			line-height: 1.6em;
+			line-height: 1.5em;
 			margin: 0px;
 		}
 	}
@@ -277,12 +278,16 @@ nav {
 			@include padding(0px 0px 1em 0px);
 
 			display: inline-block;
-			font: lighter 1.25em $font-stack;
+			font: lighter 1.25em $font-stack-p;
 			min-width: 475px;
 			vertical-align: top;
 			width: 47.5%;
 
 			span {
+				font: lighter 1em $font-stack;
+			}
+
+			.blue-span {
 				color: $blue-color;
 			}
 		}
@@ -309,7 +314,6 @@ nav {
 
 		img {
 			@include size(100% auto);
-			//max-width: 759px;
 			opacity: 0.85;
 		}
 	}
@@ -426,7 +430,7 @@ nav {
 	.content-inner {
 		p {
 			@include margin(0px 0px 2em 0px);
-			font: lighter 1.25em $font-stack;
+			font: lighter 1.25em $font-stack-p;
 		}
 
 		.contact-item {
@@ -481,17 +485,16 @@ nav {
 
 footer {
 	@include background-opacity($nav-color, $nav-opacity);
-	@include margin(5em 0 0 0);
+	@include margin(4em 0 0 0);
 	@include position(absolute, null 0px null null);
 	@include size(50% 2em);
 
 	p {
 		@include margin(0px 0px 0px 2em);
+		@include padding(0.2em 0px 0.3em 0px);
 
 		color: $nav-dark-hover-color;
-		//float: right;
-		font-weight: normal;
-		line-height: 2em;
+		font: lighter 1.25em $font-stack-p;
 		min-width: 400px;
 	}
 }
@@ -512,7 +515,7 @@ footer {
 	}
 
 	p {
-		font: lighter 1.25em $font-stack;
+		font: lighter 1.25em $font-stack-p;
 		padding-top: 1em;
 		text-align: center;
 	}

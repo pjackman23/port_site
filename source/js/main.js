@@ -1,7 +1,7 @@
 var Body = {
 	resizeDivs: function() {
 		$(".content-wrapper").css('width', $(window).width());
-		$(".content-wrapper").css('min-height', screen.height);
+		$(".content-wrapper").css('min-height', $(window).height());
 	},
 
 	appear: function() {
