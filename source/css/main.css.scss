@@ -17,6 +17,8 @@ $nav-light-hover-color: #285a73;
 $nav-opacity: 0.95;
 $nav-border-thickness: 2px;
 
+$overlay-bg-color: #0a0c0d;
+
 $contact-blue-hover: #47a0cc;
 
 $font-stack: Segoe UI, sans-serif;
@@ -152,7 +154,7 @@ nav {
 		@include border-style(solid solid null null);
 		@include border-width(2px 2px null null);
 		@include margin(0.5em null 0px null);
-		@include padding(1em 1em 1em 1.5em);
+		@include padding(1.5em 1.5em 1.5em 1.5em);
 	}
 
 	//animation styles
@@ -199,7 +201,7 @@ nav {
 	}
 
 	#btm-div {
-		@include margin(7em null null null);
+		@include margin(5em null null null);
 
 		h3 {
 			@include margin(0px 1em 0px 0px);
@@ -219,11 +221,11 @@ nav {
 
 	p {
 		@include margin(0 null 0.5em null);
-		font: lighter 1.5em $font-stack;
+		font: lighter 1.25em $font-stack;
 	}
 
 	#about-p {
-		width: 90%;
+		width: 85%;
 	}
 
 	h2 {
@@ -236,12 +238,12 @@ nav {
 		@include margin(1em 1em 0px null);
 
 		display: inline-block;
-		min-width: 365px;
+		min-width: 300px;
 		vertical-align: top;
 		width: 27.5%;
 
 		p {
-			height: 10em;
+			min-height: 8em;
 			line-height: 1.6em;
 			margin: 0px;
 		}
@@ -275,7 +277,7 @@ nav {
 			@include padding(0px 0px 1em 0px);
 
 			display: inline-block;
-			font: lighter 1.5em $font-stack;
+			font: lighter 1.25em $font-stack;
 			min-width: 475px;
 			vertical-align: top;
 			width: 47.5%;
@@ -320,27 +322,47 @@ nav {
 
 #overlay {
 	@include size(100% 100%);
-	@include background-opacity($nav-color, 0.9);
+	@include background-opacity($overlay-bg-color, 0.85);
 	@include position(fixed, 0px null null 0px);
 	@include transition-property(opacity);
-	@include transition-duration(0.25s);
+	@include transition-duration(0.5s);
 
 	z-index: 2000;
 	opacity: 0; //for animation
+	min-width: 700px;
+	min-height: 625px;
 	visibility: hidden;
 
 	#inner-overlay {
-		@include background-opacity($nav-img-color, $nav-opacity);
 		@include margin(3em auto 3em auto);
-		@include size(85% 85%);
+		@include size(80% 80%);
+		@include background-opacity($nav-dark-hover-color, 0.85);
+		
+		position: relative;
+		vertical-align: middle;
+		z-index: 3000;
+
+		#overlay-top-div {
+			@include background-opacity($nav-color, $nav-opacity);
+			@include padding(0px 0px 0px 2em);
+			@include size(100% (60px + 1px));
+
+			border-bottom: 1px solid $blue-color;
+		}
+
+		#overlay-h3 {
+			font: lighter 2em $font-stack;
+			line-height: 60px;
+			margin: 0px;
+		}
 
 		#close-a {
-			@include size(2em 2em);
-
+			@include size(auto 60px);
 			float: right;
+			outline: none;
 
 			#close-img {
-				@include size(2em 2em);
+				@include size(auto 60px);
 			}
 		}
 
@@ -349,6 +371,51 @@ nav {
 				padding: 1px;
 			}
 		}
+
+		#overlay-btm-div {
+			@include padding(2em 1em 1em 1em);
+			height: 100%;
+			width: 100%;
+
+			a {
+				width: 8%;
+				max-width: 150px;
+				min-width: 80px;
+				outline: none;
+
+				img {
+					@include size(100% auto);
+				}
+			}
+
+			a:active {
+				padding: 1px;
+			}
+
+			#left-arrow-a {
+				@include position(absolute, null null 32.5% -2.5em);
+			}
+
+			#overlay-main-img {
+				@include margin(0px auto 0px auto);
+				@include transition-property(all);
+				@include transition-duration(0.250s);
+
+				display: block;
+				max-width: 85%;
+				max-height: 85%;
+				opacity: 1;
+				vertical-align: middle;
+			}
+
+			#right-arrow-a {
+				@include position(absolute, null -2.5em 32.5% null);
+			}
+		}
+
+        .overlay-inline {
+            display: inline-block;
+        }
 	}
 }
 
@@ -359,7 +426,7 @@ nav {
 	.content-inner {
 		p {
 			@include margin(0px 0px 2em 0px);
-			font: lighter 1.5em $font-stack;
+			font: lighter 1.25em $font-stack;
 		}
 
 		.contact-item {
@@ -414,7 +481,7 @@ nav {
 
 footer {
 	@include background-opacity($nav-color, $nav-opacity);
-	@include margin(7em 0 0 0);
+	@include margin(5em 0 0 0);
 	@include position(absolute, null 0px null null);
 	@include size(50% 2em);
 

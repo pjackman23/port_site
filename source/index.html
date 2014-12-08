@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -125,6 +125,28 @@
         <div class="content-wrapper" id="work-wrapper">
             <h1>WORK</h1>
             <h3 class= "orange-h3 scroll-appear delay-one">
+                HDR
+            </h3>
+            <div class="exp-wrapper orange-wrapper scroll-appear delay-one">
+                <p class="exp-p">
+                    <span>Role:</span> Development Manager<br>
+                    <span>Paradigm:</span> Hospital Wayfinding
+                    <br><br>
+                    Over the course of the 2013-2014 academic year, I worked with another
+                    student team to design a hospital wayfinding system for HDR. We followed HDR's own
+                    Synapse design process, actively scoping the project (and our design principles),
+                    empathisizing through core user personas, brainstorming, prototyping, and testing
+                    with relevant users. We hit the whiteboards hard, and traveled to
+                    several hospitals to get a feel for how confusing navigation can be... 
+                    especially when you're not feeling your best. At the end of the project, we had an
+                    expansive idea catalogue and several working prototypes that leveraged graphic
+                    affordance and digital guidance (via Bluetooth, Android, and Arduino systems).
+                </p>
+                <a class="exp-a" id="hdr-a" href="javaScript:void(0);">
+                    <img id="hdr-img" src="img/hdr/0.jpg"/>
+                </a>
+            </div>
+            <h3 class= "orange-h3 scroll-appear delay-one">
                 Hudl
             </h3>
             <div class="exp-wrapper orange-wrapper scroll-appear delay-one">
@@ -145,29 +167,7 @@
                     the app store.
                 </p>
                 <a class="exp-a" id="hudl-a" href="javaScript:void(0);">
-                    <img id="hudl-img" src="img/hudl-player.jpg"/>
-                </a>
-            </div>
-            <h3 class= "orange-h3 scroll-appear delay-one">
-                HDR
-            </h3>
-            <div class="exp-wrapper orange-wrapper scroll-appear delay-one">
-                <p class="exp-p">
-                    <span>Role:</span> Development Manager<br>
-                    <span>Paradigm:</span> Hospital Wayfinding
-                    <br><br>
-                    Over the course of the 2013-2014 academic year, I worked with another
-                    student team to design a hospital wayfinding system for HDR. We followed HDR's own
-                    Synapse design process, actively scoping the project (and our design principles),
-                    empathisizing through core user personas, brainstorming, prototyping, and testing
-                    with relevant users. We hit the whiteboards hard, and traveled to
-                    several hospitals to get a feel for how confusing navigation can be... 
-                    especially when you're not feeling your best. At the end of the project, we had an
-                    expansive idea catalogue and several working prototypes that leveraged graphic
-                    affordance and digital guidance (via Bluetooth, Android, and Arduino systems).
-                </p>
-                <a class="exp-a" id="hdr-a" href="javaScript:void(0);">
-                    <img id="hdr-img" src="img/hdr-mail.jpg"/>
+                    <img id="hudl-img" src="img/hudl/0.jpg"/>
                 </a>
             </div>
             <h3 class= "orange-h3 scroll-appear delay-one">
@@ -189,7 +189,7 @@
                     and I was very happy that inital feature reviews were positive.
                 </p>
                 <a class="exp-a" id="garmin-a" href="javaScript:void(0);">
-                    <img id="garmin-img" src="img/garmin-fenix.jpg"/>
+                    <img id="garmin-img" src="img/garmin/0.jpg"/>
                 </a>
             </div>
             <h3 class= "orange-h3 scroll-appear delay-one">
@@ -209,16 +209,28 @@
                     experience, and that's something I strive to make as enjoyable as possible.
                 </p>
                 <a class="exp-a" id="other-a">
-                    <img id="other-img" src="img/site-home.jpg"/>
+                    <img id="other-img" src="img/other/0.jpg" href="javaScript:void(0);"/>
                 </a>
             </div>
         </div>
 
         <div id="overlay">
             <div id="inner-overlay">
-                <a id="close-a">
-                    <img id="close-img" src="img/x-default.png"/>
-                </a>
+                <div id ="overlay-top-div">
+                    <h3 class="overlay-inline" id="overlay-h3"></h3>
+                    <a class="overlay-inline" id="close-a" href="javaScript:void(0);">
+                        <img id="close-img" src="img/x-default.png"/>
+                    </a>
+                </div>
+                <div id ="overlay-btm-div">
+                    <a class="overlay-inline" id="left-arrow-a" href="javaScript:void(0);">
+                        <img id="left-arrow-img" src="img/left-arrow-default.png" />
+                    </a>
+                    <img class="overlay-inline" id="overlay-main-img" src="meh.png"/>
+                    <a class="overlay-inline" id="right-arrow-a" href="javaScript:void(0);">
+                        <img id="right-arrow-img" src="img/right-arrow-default.png" />
+                    </a>
+                </div>
             </div>
         </div>
 

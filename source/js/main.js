@@ -124,12 +124,45 @@ var Home = {
 }
 
 var Work = {
+    index: 0,
+    numImages: 0,
 
-	displayOverlay: function(sectionName) {
+    animateMainImg: function(directory) {
+    	$("#overlay-main-img").css('opacity', 0);
+	    setTimeout(function(){ document.getElementById('overlay-main-img').src = "../img/" + directory + "/" + Work.index + ".jpg"; }, 250); //allow animation to breathe
+	    setTimeout(function(){$("#overlay-main-img").css('opacity', 1);}, 500);
+    },
+
+	displayOverlay: function(directory, overlayHeader, numImages) {
 		$("#overlay").css('visibility', "visible");
 		$("#overlay").css('opacity', 1);
 
-		//alert("This is: " + sectionName);
+		$("#overlay-h3").text(overlayHeader);
+
+		Work.numImages = numImages;
+		Work.index = 0;
+
+		document.getElementById('overlay-main-img').src = "../img/" + directory + "/" + Work.index + ".jpg";
+
+		document.getElementById('right-arrow-a').onclick = function () {
+		    Work.index++;
+
+		    if (Work.index >= Work.numImages) {
+		        Work.index = 0;
+		    }
+
+		   	Work.animateMainImg(directory);
+		};
+
+		document.getElementById('left-arrow-a').onclick = function () {
+		    Work.index--;
+
+		    if (Work.index <= 0) {
+		        Work.index = Work.numImages - 1;
+		    }
+
+		    Work.animateMainImg(directory);
+		};
 	},
 
 	hideOverlay: function() {
@@ -140,22 +173,22 @@ var Work = {
 	bindImgEvents: function(){
 		// links to overlay
 		document.getElementById('hudl-a').onclick = function () {
-		    Work.displayOverlay("hudl");
+		    Work.displayOverlay("hudl", "Hudl - Windows 8", 5);
 		};
 
 		document.getElementById('hdr-a').onclick = function () {
-		    Work.displayOverlay("hdr");
+		    Work.displayOverlay("hdr", "HDR - Hospital Wayfinding", 6);
 		};
 
 		document.getElementById('garmin-a').onclick = function () {
-		    Work.displayOverlay("garmin");
+		    Work.displayOverlay("garmin", "Garmin - GPS Trail Watch", 2);
 		};
 
 		document.getElementById('other-a').onclick = function () {
-		    Work.displayOverlay("other");
+		    Work.displayOverlay("other", "Other - Web/Mobile", 14);
 		};
 
-		//links within overlay
+		//overlay close
 		document.getElementById('close-a').onmouseover = function () {
 		    document.getElementById('close-img').src = "../img/x-invert.png";
 		};
@@ -172,6 +205,39 @@ var Work = {
 		    Work.hideOverlay();
 		};
 
+        //overlay left arrow
+		document.getElementById('left-arrow-a').onmouseover = function () {
+		    document.getElementById('left-arrow-img').src = "../img/left-arrow-invert.png";
+		};
+
+		document.getElementById('left-arrow-a').onmouseout = function () {
+		    document.getElementById('left-arrow-img').src = "../img/left-arrow-default.png";
+		};
+
+		document.getElementById('left-arrow-a').onmousedown = function () {
+		    document.getElementById('left-arrow-img').src = "../img/left-arrow-glow.png";
+		};
+
+		document.getElementById('left-arrow-a').onmouseup = function () {
+		    document.getElementById('left-arrow-img').src = "../img/left-arrow-invert.png";
+		};
+
+        //overlay right arrow
+		document.getElementById('right-arrow-a').onmouseover = function () {
+		    document.getElementById('right-arrow-img').src = "../img/right-arrow-invert.png";
+		};
+
+		document.getElementById('right-arrow-a').onmouseout = function () {
+		    document.getElementById('right-arrow-img').src = "../img/right-arrow-default.png";
+		};
+
+		document.getElementById('right-arrow-a').onmousedown = function () {
+		    document.getElementById('right-arrow-img').src = "../img/right-arrow-glow.png";
+		};
+
+		document.getElementById('right-arrow-a').onmouseup = function () {
+		    document.getElementById('right-arrow-img').src = "../img/right-arrow-invert.png";
+		};
 	}
 }
 
