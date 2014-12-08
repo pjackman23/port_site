@@ -50,6 +50,7 @@ var NavBar = {
 	},
 
 	getScrollRatio: function() {
+		this.getDocHeight();
 		scrollRatio = $(document).scrollTop() / (1.0 * docHeight);
 	},
 
@@ -261,7 +262,6 @@ var Work = {
 $(document).ready(function() {
     NavBar.anchorScroll();
 	NavBar.bindImgEvents();
-	NavBar.getDocHeight();
 	NavBar.getScrollRatio();
 
 	Body.resizeDivs();
