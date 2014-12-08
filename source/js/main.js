@@ -10,7 +10,7 @@ var Body = {
 
 			var topOfWindow = $(window).scrollTop();
 			if (imagePos < topOfWindow + $(window).height()) {
-				$(this).css('opacity', 1)
+				$(this).css('opacity', 1);
 			}
 		});
 	},
@@ -21,6 +21,18 @@ var Body = {
 
 		$(".exp-p").css('min-width', parseInt(screen.width * 0.35) + "px");
 		$(".exp-a").css('min-width', parseInt(screen.width * 0.35) + "px");
+	},
+
+	detectMobileDevice: function() { 
+		if( navigator.userAgent.match(/Android/i)
+		 || navigator.userAgent.match(/webOS/i)
+		 || navigator.userAgent.match(/iPhone/i)
+		 || navigator.userAgent.match(/iPad/i)
+		 || navigator.userAgent.match(/iPod/i)
+		 || navigator.userAgent.match(/BlackBerry/i)
+		 || navigator.userAgent.match(/Windows Phone/i) ) {
+			$("#mobile-overlay").css('visibility', "visible");	  
+		}
 	}
 }
 
@@ -130,7 +142,6 @@ var Work = {
     animateMainImg: function(directory) {
     	$("#overlay-main-img").css('opacity', 0);
 	    setTimeout(function(){ document.getElementById('overlay-main-img').src = "../img/" + directory + "/" + Work.index + ".jpg"; }, 250); //allow animation to breathe
-	    setTimeout(function(){$("#overlay-main-img").css('opacity', 1);}, 500);
     },
 
 	displayOverlay: function(directory, overlayHeader, numImages) {
@@ -238,6 +249,11 @@ var Work = {
 		document.getElementById('right-arrow-a').onmouseup = function () {
 		    document.getElementById('right-arrow-img').src = "../img/right-arrow-invert.png";
 		};
+
+		//overlay main image
+		document.getElementById('overlay-main-img').onload = function () {
+	    	$("#overlay-main-img").css('opacity', 1);
+	    };
 	}
 }
 
@@ -250,6 +266,7 @@ $(document).ready(function() {
 
 	Body.resizeDivs();
 	Body.setMinWidth();
+	Body.detectMobileDevice();
 
 	Home.resizeElements();
 

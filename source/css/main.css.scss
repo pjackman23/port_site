@@ -31,7 +31,7 @@ $font-stack: Segoe UI, sans-serif;
 
 //core scss
 html { 
-  background: url(../img/proto-bg.png) no-repeat center center fixed; 
+  background: url(../img/proto-bg.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -493,5 +493,27 @@ footer {
 		font-weight: normal;
 		line-height: 2em;
 		min-width: 400px;
+	}
+}
+
+#mobile-overlay {
+	@include position(fixed, 0px null null 0px);
+	@include size(100% 100%);
+
+	background-color: $nav-color;
+	min-width: 500px;
+	padding: 2em;
+	visibility: hidden;
+	z-index: 5000;
+
+	.center {
+		display: block;
+		margin: auto;
+	}
+
+	p {
+		font: lighter 1.25em $font-stack;
+		padding-top: 1em;
+		text-align: center;
 	}
 }
