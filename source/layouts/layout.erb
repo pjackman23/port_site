@@ -6,11 +6,35 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Use the title from a page's frontmatter if it has one -->
-    <title><%= current_page.data.title || "Middleman" %></title>
+    <title><%= current_page.data.title || "P-Jackman" %></title>
     <%= stylesheet_link_tag "site" %>
     <%= javascript_include_tag "site" %>
+    <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro" rel="stylesheet">
   </head>
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">PATRICK JACKMAN</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">PORTFOLIO</a></li>
+            <li><a href="#">CONNECT</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div>
+    </nav>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

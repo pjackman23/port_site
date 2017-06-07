@@ -1,10 +1,61 @@
+@import "fonts";
+@import "bootstrap-custom-variables";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 body {
-  background-color: #cccccc;
-  color: #333;
-  font-family: -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir",
-    "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans",
-    "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu",
-    "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
-  padding: 18vh 1rem;
-  text-align: center;
+  padding-top: 70px;
 }
+
+.navbar {
+  font-family: $font-family-sans-serif;
+
+  border: none;
+
+  .container {
+    border-bottom: 5px solid;
+
+    border-image:   linear-gradient(to right, grey 25%, orange 25%, orange 50%,red 50%, red 75%, teal 75%) 1;
+  }
+  
+  .navbar-collapsed {
+    border-style: dotted;
+  }
+
+  .navbar-toggle {
+    .icon-bar {
+        transition: 300ms ease-in-out;
+        position: relative;
+        width: 24px;
+        height: 3px;
+    }
+    .icon-bar:last-child {
+        -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        top: -7px;
+    }
+    .icon-bar:nth-child(2) {
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        top: 7px;
+    }
+    .icon-bar:nth-child(3) {
+        opacity: 0;
+    }
+    &.collapsed {
+        .icon-bar {
+            -webkit-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);        
+            top: 0;
+            opacity: 1;
+        }
+    }
+  }
+}
+
