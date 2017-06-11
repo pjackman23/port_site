@@ -40,6 +40,12 @@ page '/*.txt', layout: false
 #   end
 # end
 
+helpers do
+	def active_navigation(page)
+		current_page.url.include?(page) ? "active" : ''
+  	end
+end
+
 # Build-specific configuration
 # https://middlemanapp.com/advanced/configuration/#environment-specific-settings
 

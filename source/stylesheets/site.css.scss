@@ -1,61 +1,79 @@
+$pj-green: #85924b !default;
+$pj-blue: #67ad96 !default;
+$pj-yellow: #da8f45 !default;
+$pj-red: #d1523a !default;
+
+$pj-tan: #f8d99c !default;
+$pj-brown: #30271F !default;
+
 @import "fonts";
 @import "bootstrap-custom-variables";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 body {
-  padding-top: 70px;
+    padding-top: 70px;
+    background-image: image_url("site_bg.png");
 }
 
 .navbar {
-  font-family: $font-family-sans-serif;
+    background-image: image_url("site_bg.png");
+    font-family: $font-family-sans-serif;
 
-  border: none;
-
-  .container {
     border-bottom: 5px solid;
+    border-image: linear-gradient(to right, $pj-blue 25%, $pj-yellow 25%, $pj-yellow 50%, $pj-green 50%, $pj-green 75%, $pj-red 75%) 1;
 
-    border-image:   linear-gradient(to right, grey 25%, orange 25%, orange 50%,red 50%, red 75%, teal 75%) 1;
-  }
-  
-  .navbar-collapsed {
-    border-style: dotted;
-  }
+    -webkit-box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+    -ms-box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
 
-  .navbar-toggle {
-    .icon-bar {
-        transition: 300ms ease-in-out;
-        position: relative;
-        width: 24px;
-        height: 3px;
+    .container {
+        border-bottom: none;
     }
-    .icon-bar:last-child {
-        -webkit-transform: rotate(-45deg);
-        -ms-transform: rotate(-45deg);
-        -o-transform: rotate(-45deg);
-        transform: rotate(-45deg);
-        top: -7px;
-    }
-    .icon-bar:nth-child(2) {
-        -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        -o-transform: rotate(45deg);
-        transform: rotate(45deg);
-        top: 7px;
-    }
-    .icon-bar:nth-child(3) {
-        opacity: 0;
-    }
-    &.collapsed {
+
+    .navbar-toggle {
         .icon-bar {
-            -webkit-transform: rotate(0deg);
-            -ms-transform: rotate(0deg);
-            -o-transform: rotate(0deg);
-            transform: rotate(0deg);        
-            top: 0;
-            opacity: 1;
+            transition: 300ms ease-in-out;
+            position: relative;
+            width: 24px;
+            height: 3px;
+        }
+        .icon-bar:last-child {
+            -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            top: -7px;
+        }
+        .icon-bar:nth-child(2) {
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+            top: 7px;
+        }
+        .icon-bar:nth-child(3) {
+            opacity: 0;
+        }
+        &.collapsed {
+            .icon-bar {
+                -webkit-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);        
+                top: 0;
+                opacity: 1;
+            }
         }
     }
-  }
 }
 
+::-moz-selection { /* Code for Firefox */
+    color: $pj-tan;
+    background: $pj-brown;
+}
+
+::selection {
+    color: $pj-tan;
+    background: $pj-brown;
+}
