@@ -1,45 +1,127 @@
+//
+//
+// UNIVERSAL VARIABLES
+//
+//
+
 $pj-green: #85924b !default;
 $pj-blue: #67ad96 !default;
 $pj-yellow: #da8f45 !default;
 $pj-red: #d1523a !default;
 
 $pj-tan: #f8d99c !default;
-$pj-brown: #30271F !default;
+$pj-brown: #30271f !default;
+
+
+//
+//
+// IMPORTS
+//
+//
 
 @import "fonts";
 @import "bootstrap-custom-variables";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-body {
-    padding-top: 70px;
-    background-image: image_url("site_bg.png");
+//
+//
+// TEXT
+//
+//
+
+h1, h2, h3, h4, h5 {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
+h4 {
+    font-family: $font-family-serif;
+}
+
+.lead-header {
+    margin-top: 0;
+}
+
+a {
+    outline: none !important;
+}
+
+.highlight-text {
+    color: $pj-yellow;
+}
+
+//
+//
+// CONTAINERS
+//
+//
+
+body {
+    padding-top: 100px;
+    background-image: image_url("grain.png");
+}
+
+hr {
+    border-color: $pj-brown;
+    border-style: dotted;
+}
+
+//
+//
+// NAVIGATION
+//
+//
+
 .navbar {
-    background-image: image_url("site_bg.png");
+    background-image: image_url("grain.png");
     font-family: $font-family-sans-serif;
 
     border-bottom: 5px solid;
-    border-image: linear-gradient(to right, $pj-blue 25%, $pj-yellow 25%, $pj-yellow 50%, $pj-green 50%, $pj-green 75%, $pj-red 75%) 1;
+    border-image: linear-gradient(to right, $pj-yellow 25%, $pj-blue 25%, $pj-blue 50%, $pj-red 50%, $pj-red 75%, $pj-green 75%) 1;
 
-    -webkit-box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
-    -ms-box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
-    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0px 5px 15px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 5px 15px rgba(0,0,0,0.25);
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.25);
 
     .container {
         border-bottom: none;
     }
 
+    .nav.navbar-nav li a{
+        -webkit-transition: 0.1s ease-out;
+        -moz-transition: 0.1s ease-out;
+        transition: 0.1s ease-out;
+
+        font-size: 16px;
+
+        &:active {
+            -webkit-box-shadow: inset 0px 5px 15px rgba(0,0,0,0.25);
+            -moz-box-shadow: inset 0px 5px 15px rgba(0,0,0,0.25);
+            box-shadow: inset 0px 5px 15px rgba(0,0,0,0.25);
+
+            color: $pj-yellow;
+        }
+        &:focus {
+            color: $pj-yellow;
+        }
+    }
+
     .navbar-toggle {
+        border:none;
+
         .icon-bar {
-            transition: 300ms ease-in-out;
+            -webkit-transition: background 0.1s ease-out;
+            -moz-transition: background 0.1s ease-out;
+            transition: 0.1s ease-in-out;
+
             position: relative;
             width: 24px;
             height: 3px;
         }
         .icon-bar:last-child {
             -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
             -ms-transform: rotate(-45deg);
             -o-transform: rotate(-45deg);
             transform: rotate(-45deg);
@@ -47,6 +129,7 @@ body {
         }
         .icon-bar:nth-child(2) {
             -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
             -ms-transform: rotate(45deg);
             -o-transform: rotate(45deg);
             transform: rotate(45deg);
@@ -58,6 +141,7 @@ body {
         &.collapsed {
             .icon-bar {
                 -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
                 -ms-transform: rotate(0deg);
                 -o-transform: rotate(0deg);
                 transform: rotate(0deg);        
@@ -68,6 +152,70 @@ body {
     }
 }
 
+//
+//
+// INDEX PAGES
+//
+//
+
+.root-link {
+    -webkit-box-shadow: 0px 5px 15px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 5px 15px rgba(0,0,0,0.25);
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.25);
+
+    -webkit-transition: 0.1s ease-out;
+    -moz-transition: 0.1s ease-out;
+    transition: 0.1s ease-out;
+
+    color: $pj-tan;
+
+    &:hover {
+        color: lighten($pj-tan, 10%);
+    }
+
+    &:active {
+        -webkit-box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
+        -moz-box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
+        box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
+
+        color: $pj-yellow;
+    }
+
+    &:focus {
+        color: $pj-yellow;
+    }
+}
+
+.thumbnail {
+    position: relative;
+    padding: 0;
+    border-radius: 0;
+    border: none;
+}
+
+.thumbnail-caption {
+    position: absolute;
+    top: 37.5%;
+    left: 0;
+    width: 100%;
+
+    background-color: rgba(48, 39, 31, 0.75);
+}
+
+//
+//
+// MODAL
+//
+//
+
+
+
+//
+//
+// MISCELLANEOUS
+//
+//
+
 ::-moz-selection { /* Code for Firefox */
     color: $pj-tan;
     background: $pj-brown;
@@ -76,4 +224,73 @@ body {
 ::selection {
     color: $pj-tan;
     background: $pj-brown;
+}
+
+.noise-overlay {
+    width: 100%;
+    height: 100% !important;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: image_url("noise.gif") repeat;
+    opacity: 0;
+
+    -moz-transition: opacity 0.4s ease-out;
+    -webkit-transition: opacity 0.4s ease-out;
+    transition: opacity 0.4s ease-out;
+
+    &:hover {
+        opacity: 0.12;
+    }
+    &:active {
+        -moz-transition: opacity 0.2s ease-out;
+        -webkit-transition: opacity 0.2s ease-out;
+        transition: opacity 0.2s ease-out;
+
+        opacity: 0.15;
+    }
+}
+
+//
+//
+// MEDIA QUERIES
+//
+//
+
+@media (max-width: $screen-sm - 0.5) {
+    .navbar-collapse {
+        background-image: image_url("grain.png");
+        background-color: darken($pj-tan, 5%);
+
+        -webkit-box-shadow: inset 0px 5px 10px rgba(0,0,0,0.25);
+        -moz-box-shadow: inset 0px 5px 10px rgba(0,0,0,0.25);
+        box-shadow: inset 0px 5px 10px rgba(0,0,0,0.25);
+
+        ul {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+}
+
+@media (max-width: $screen-xs - 0.5) {
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    h4 {
+        font-size: 16px;
+    }
+
+    h5 {
+        font-size: 14px;
+    }
 }
