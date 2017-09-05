@@ -3,58 +3,28 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Use the title from a page's frontmatter if it has one -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><%= current_page.data.title || "Patrick Jackman" %></title>
+    <%= javascript_include_tag "typed/typed.min" %>
     <%= stylesheet_link_tag "site" %>
     <%= javascript_include_tag "site" %>
     <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro" rel="stylesheet">
 
-    <link rel="apple-touch-icon" sizes="144x144" href="./apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
-    <link rel="manifest" href="./manifest.json">
-    <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#67ad96">
+    <link rel="apple-touch-icon" sizes="144x144" href="<%= image_path('favicons/apple-touch-icon.png')%>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<%= image_path('favicons/favicon-32x32.png')%>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<%= image_path('favicons/favicon-16x16.png')%>">
+    <link rel="manifest" href="<%= image_path('favicons/manifest.json')%>">
+    <link rel="mask-icon" href="<%= image_path('favicons/safari-pinned-tab.svg')%>" color="#67ad96">
     <meta name="theme-color" content="#f8d99c">
   </head>
   <body>
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
           <a class="navbar-brand" href="/music" style="padding-top: 10px; padding-bottom: 10px; line-height: 50px;">
             <img alt="PJ" src="<%= image_path("PJ_Logo_Name.png")%>" style="height: 50px; display: inline-block; margin-top: -5px;">
           </a>
         </div>
-
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="<%= active_navigation("/about") %>">
-              <a href="/music/about.html">
-                <div class="noise-overlay"></div>
-                ABOUT
-              </a>
-            </li>
-            <li>
-              <a href="/music/sounds.html">
-                <div class="noise-overlay"></div>
-                Sounds
-              </a>
-            </li>
-            <li class="<%= active_navigation("/connect") %>">
-              <a href="/music/contact.html">
-                <div class="noise-overlay"></div>
-                CONTACT
-              </a>
-            </li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
       </div>
     </nav>
     <div class="container">
@@ -62,3 +32,4 @@
     </div>
   </body>
 </html>
+

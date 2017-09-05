@@ -106,9 +106,9 @@ $headings-font-weight:    700 !default;
 // $line-height-large:         1.3333333 !default; // extra decimals for Win 8.1 Chrome
 // $line-height-small:         1.5 !default;
 
-// $border-radius-base:        4px !default;
-// $border-radius-large:       6px !default;
-// $border-radius-small:       3px !default;
+$border-radius-base:        0 !default;
+$border-radius-large:       0 !default;
+$border-radius-small:       0 !default;
 
 // //** Global color for active items (e.g., navs or dropdowns).
 // $component-active-color:    #fff !default;
@@ -148,9 +148,9 @@ $headings-font-weight:    700 !default;
 
 // $btn-font-weight:                normal !default;
 
-// $btn-default-color:              #333 !default;
-// $btn-default-bg:                 #fff !default;
-// $btn-default-border:             #ccc !default;
+$btn-default-color:              $pj-brown !default;
+$btn-default-bg:                 $pj-tan !default;
+$btn-default-border:             $pj-brown !default;
 
 // $btn-primary-color:              #fff !default;
 // $btn-primary-bg:                 $brand-primary !default;
@@ -602,9 +602,9 @@ $navbar-default-toggle-border-color:       transparent !default;
 // //** Background color of modal content area
 $modal-content-bg:                             $pj-tan !default;
 // //** Modal content border color
-$modal-content-border-color:                   darken($pj-tan, 10%) !default;
+$modal-content-border-color:                   $pj-brown !default;
 // //** Modal content border color **for IE8**
-$modal-content-fallback-border-color:          darken($pj-tan, 10%) !default;
+$modal-content-fallback-border-color:          $pj-brown !default;
 
 // //** Modal backdrop background color
 $modal-backdrop-bg:           $pj-brown !default;

@@ -1,11 +1,22 @@
 //= require jquery  
 //= require bootstrap-sprockets
 
-/* File: fixed.js
- * Fix shifting fixed navbar to the right 
- */
-
 $(document).ready(function(){
+
+    var typed = new Typed('#typed', {
+        stringsElement: '#typed-strings',
+        startDelay: 1000,
+        typeSpeed: 40,
+        backSpeed: 30,
+        backDelay: 800,
+        cursorChar: '_',
+        smartBackspace: true
+    });
+
+    /*
+     * Fix shifting fixed navbar to the right 
+     */
+
     $(window).load(function(){
         var oldSSB = $.fn.modal.Constructor.prototype.setScrollbar;
         $.fn.modal.Constructor.prototype.setScrollbar = function () 

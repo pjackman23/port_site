@@ -1,10 +1,10 @@
 ---
-title: Patrick Jackman - Work
+title: Work - Patrick Jackman
 ---
 
 <div class="row">
   <div class="col-sm-6">
-    <a href="javascript:void(0);" class="thumbnail text-center root-link" data-toggle="modal" data-target="#togetherModal">
+    <a href="javascript:void(0);" class="thumbnail root-link" data-toggle="modal" data-target="#clinicModal">
       <img src="<%= image_path('clinic/clinic_preview.jpg')%>" alt="clinicPreview">
       <div class="thumbnail-caption">
           <h2>Together Clinic</h2>
@@ -13,16 +13,16 @@ title: Patrick Jackman - Work
     </a>
   </div>
   <div class="col-sm-6">
-    <a href="javascript:void(0);" class="thumbnail text-center root-link" data-toggle="modal" data-target="#artModal">
+    <a href="javascript:void(0);" class="thumbnail root-link" data-toggle="modal" data-target="#artModal">
       <img src="<%= image_path('art/art_preview.jpg')%>" alt="artPreview">
       <div class="thumbnail-caption">
-          <h2>General Art</h2>
+          <h2>Art</h2>
       </div>
       <div class="noise-overlay"></div>
     </a>
   </div>
   <div class="col-sm-6">
-    <a href="javascript:void(0);" class="thumbnail text-center root-link" data-toggle="modal" data-target="#hdrModal">
+    <a href="javascript:void(0);" class="thumbnail root-link" data-toggle="modal" data-target="#hdrModal">
       <img src="<%= image_path('hdr/hdr_preview.jpg')%>" alt="hdrPreview">
       <div class="thumbnail-caption">
           <h2>HDR</h2>
@@ -31,7 +31,7 @@ title: Patrick Jackman - Work
     </a>
   </div>
   <div class="col-sm-6">
-    <a href="javascript:void(0);" class="thumbnail text-center root-link" data-toggle="modal" data-target="#hudlModal">
+    <a href="javascript:void(0);" class="thumbnail root-link" data-toggle="modal" data-target="#hudlModal">
       <img src="<%= image_path('hudl/hudl_preview.jpg')%>" alt="hudlPreview">
       <div class="thumbnail-caption">
           <h2>Hudl</h2>
@@ -40,7 +40,7 @@ title: Patrick Jackman - Work
     </a>
   </div>
   <div class="col-sm-6">
-    <a href="javascript:void(0);" class="thumbnail text-center root-link" data-toggle="modal" data-target="#garminModal">
+    <a href="javascript:void(0);" class="thumbnail root-link" data-toggle="modal" data-target="#garminModal">
       <img src="<%= image_path('garmin/garmin_preview.jpg')%>" alt="garminPreview">
       <div class="thumbnail-caption">
           <h2>Garmin</h2>
@@ -49,7 +49,7 @@ title: Patrick Jackman - Work
     </a>
   </div>
   <div class="col-sm-6">
-    <a href="javascript:void(0);" class="thumbnail text-center root-link" data-toggle="modal" data-target="#personalModal">
+    <a href="javascript:void(0);" class="thumbnail root-link" data-toggle="modal" data-target="#personalModal">
       <img src="<%= image_path('personal/personal_preview.jpg')%>" alt="personalPreview">
       <div class="thumbnail-caption">
           <h2>Personal</h2>
@@ -59,19 +59,199 @@ title: Patrick Jackman - Work
   </div>
 </div>
 
-<!-- Modal -->
+
+<!-- MODALS -->
+
+<div class="modal fade" id="clinicModal" tabindex="-1" role="dialog" aria-labelledby="clinicModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="clinicModalLabel">Together Clinic</h4>
+      </div>
+      <div class="modal-body">
+        <h5 class="modal-lead-text">
+          Role: COO / Director of UX<br/>
+          Paradigm: UX / Design / Development
+        </h5>
+        <p>
+          I managed design decisions and execution for Together Clinic's web application, social media accounts, and marketing materials.
+          I worked with physician and patient users regularly to understand and cater to their unique needs.
+        </p>
+        <hr/>
+        <img class="img-responsive" src="<%= image_path('clinic/monitoring.jpg')%>" alt="monitoring">
+        <img class="img-responsive" src="<%= image_path('clinic/business.jpg')%>" alt="business">
+        <img class="img-responsive" src="<%= image_path('clinic/beta.jpg')%>" alt="beta">
+        <img class="img-responsive" src="<%= image_path('clinic/discharge.jpg')%>" alt="discharge">
+        <img class="img-responsive" src="<%= image_path('clinic/ccm.jpg')%>" alt="CCM">
+        <img class="img-responsive" src="<%= image_path('clinic/social.jpg')%>" alt="social">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="modal fade" id="artModal" tabindex="-1" role="dialog" aria-labelledby="artModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="artModalLabel">General Art</h4>
+        <h4 class="modal-title" id="artModalLabel">Art</h4>
       </div>
       <div class="modal-body">
-
+        <h5 class="modal-lead-text">
+          Role: Artist <br/>
+          Paradigm: Drawing / Painting
+        </h5>
+        <p>
+          This is a small collection of my works from my college years and onward. The pieces are uncommissioned and span traditional and digital media.
+        </p>
+        <hr/>
+        <img class="img-responsive" src="<%= image_path('art/self.jpg')%>" alt="self">
+        <img class="img-responsive" src="<%= image_path('art/shoes.jpg')%>" alt="shoes">
+        <img class="img-responsive" src="<%= image_path('art/blocks.jpg')%>" alt="blocks">
+        <img class="img-responsive" src="<%= image_path('art/bed.jpg')%>" alt="bed">
+        <img class="img-responsive" src="<%= image_path('art/pinecone.jpg')%>" alt="pinecone">
+        <img class="img-responsive" src="<%= image_path('art/eggs.jpg')%>" alt="eggs">
+        <img class="img-responsive" src="<%= image_path('art/eey.jpg')%>" alt="eey">
+        <img class="img-responsive" src="<%= image_path('art/abstract.jpg')%>" alt="abstract">
+        <img class="img-responsive" src="<%= image_path('art/face.jpg')%>" alt="face">
+        <img class="img-responsive" src="<%= image_path('art/paint.jpg')%>" alt="paint">
+        <img class="img-responsive" src="<%= image_path('art/desktop.jpg')%>" alt="desktop">
+        <img class="img-responsive" src="<%= image_path('art/arch.jpg')%>" alt="arch">
+        <img class="img-responsive" src="<%= image_path('art/guy.jpg')%>" alt="guy">
+        <img class="img-responsive" src="<%= image_path('art/practice.jpg')%>" alt="practice">
+        <img class="img-responsive" src="<%= image_path('art/coco.jpg')%>" alt="coco">
+        <img class="img-responsive" src="<%= image_path('art/frog.jpg')%>" alt="frog">
+        <img class="img-responsive" src="<%= image_path('art/heart.jpg')%>" alt="heart">
+        <img class="img-responsive" src="<%= image_path('art/homme.jpg')%>" alt="homme">
+        <img class="img-responsive" src="<%= image_path('art/skull.jpg')%>" alt="skull">
       </div>
       <div class="modal-footer">
-        <p>Drawings and paintings completed at the University of Nebraska - Lincoln (2014) or thereafter.</p>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="hdrModal" tabindex="-1" role="dialog" aria-labelledby="hdrModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="hdrModalLabel">HDR (Design Studio)</h4>
+      </div>
+      <div class="modal-body">
+        <h5 class="modal-lead-text">
+          Role: Development Manager<br/>
+          Paradigm: UX / Design
+        </h5>
+        <p>
+          I led a small creative team during the ideation and prototyping phase of a hospital navigation project with HDR. We followed a methodology similar
+          to Stanford d.school's design thinking process, constantly iterating our solutions and honing our understanding of the design space.
+        </p>
+        <hr/>
+        <img class="img-responsive" src="<%= image_path('hdr/signage.jpg')%>" alt="signage">
+        <img class="img-responsive" src="<%= image_path('hdr/handout.jpg')%>" alt="handout">
+        <img class="img-responsive" src="<%= image_path('hdr/proto.jpg')%>" alt="proto">
+        <img class="img-responsive" src="<%= image_path('hdr/wall.jpg')%>" alt="wall">
+        <img class="img-responsive" src="<%= image_path('hdr/work.jpg')%>" alt="work">
+        <img class="img-responsive" src="<%= image_path('hdr/thinking.jpg')%>" alt="thinking">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="hudlModal" tabindex="-1" role="dialog" aria-labelledby="hudlModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="hudlModalLabel">Hudl (Design Studio)</h4>
+      </div>
+      <div class="modal-body">
+        <h5 class="modal-lead-text">
+          Role: Lead Interface Designer<br/>
+          Paradigm: UX / Design / Development
+        </h5>
+        <p>
+          I worked with a small development team to create a Windows 8 tablet application alongside Hudl. We regularly conducted user interviews
+          with coaches and players to evolve our solution.
+        </p>
+        <hr/>
+        <img class="img-responsive" src="<%= image_path('hudl/home.jpg')%>" alt="home">
+        <img class="img-responsive" src="<%= image_path('hudl/bball.jpg')%>" alt="bball">
+        <img class="img-responsive" src="<%= image_path('hudl/playback.jpg')%>" alt="playback">
+        <img class="img-responsive" src="<%= image_path('hudl/tagging.jpg')%>" alt="tagging">
+        <img class="img-responsive" src="<%= image_path('hudl/fullscreen.jpg')%>" alt="fullscreen">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="garminModal" tabindex="-1" role="dialog" aria-labelledby="garminModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="garminModalLabel">Garmin</h4>
+      </div>
+      <div class="modal-body">
+        <h5 class="modal-lead-text">
+          Role: Software Engineering Intern<br/>
+          Paradigm: UX / Development
+        </h5>
+        <p>
+          Among other things, I coded and tested the logic and interface of a running partner feature for the Fenix / Tactix GPS trail watches.
+        </p>
+        <hr/>
+        <img class="img-responsive" src="<%= image_path('garmin/wrist.jpg')%>" alt="wrist">
+        <img class="img-responsive" src="<%= image_path('garmin/watch.jpg')%>" alt="watch">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="personalModal" tabindex="-1" role="dialog" aria-labelledby="personalModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="personalModalLabel">Personal</h4>
+      </div>
+      <div class="modal-body">
+        <h5 class="modal-lead-text">
+          Role: Designer / Developer<br/>
+          Paradigm: UX / Design / Development
+        </h5>
+        <p>
+          I went through several iterations of the site that you're currently navigating, along with my personal branding.
+        </p>
+        <hr/>
+        <img class="img-responsive" src="<%= image_path('personal/home.jpg')%>" alt="home">
+        <img class="img-responsive" src="<%= image_path('personal/about.jpg')%>" alt="about">
+        <img class="img-responsive" src="<%= image_path('personal/work.jpg')%>" alt="work">
+        <img class="img-responsive" src="<%= image_path('personal/logos.jpg')%>" alt="logos">
+        <img class="img-responsive" src="<%= image_path('personal/rebrand1.jpg')%>" alt="colors1">
+        <img class="img-responsive" src="<%= image_path('personal/rebrand2.jpg')%>" alt="colors2">
+        <img class="img-responsive" src="<%= image_path('personal/rebrand3.jpg')%>" alt="colors3">
+        <img class="img-responsive" src="<%= image_path('personal/rebrand4.jpg')%>" alt="colors4">
+        <img class="img-responsive" src="<%= image_path('personal/rebrand5.jpg')%>" alt="colors5">
+        <img class="img-responsive" src="<%= image_path('personal/rebrand6.jpg')%>" alt="colors6">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
