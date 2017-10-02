@@ -323,6 +323,7 @@ ul, menu, dir {
 }
 
 .modal-dialog {
+
     .close {
         opacity: 0.5;
         outline: none;
@@ -338,6 +339,18 @@ ul, menu, dir {
 .modal-content {
     border: none;
     border-radius: 0;
+
+    background-image: image_url("grain.png");
+}
+
+// http://stackoverflow.com/questions/25274244/twitter-bootstrap-modal-opening-closing-causes-fixed-header-to-jump
+body.modal-open {
+    padding-right: 0 !important;
+    overflow: inherit !important;
+
+    .modal {
+        padding-right: 0 !important;
+    }
 }
 
 //
